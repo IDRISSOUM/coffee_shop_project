@@ -31,7 +31,7 @@ db_drop_and_create_all()
 
 @app.route("/drinks", methods=['GET'])
 @requires_auth('get:drinks')
-def _get_drinks():
+def _get_drinks(payload):
     drinks = Drink.query.all()
     data = [drink.short() for drink in drinks]
 
